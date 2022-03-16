@@ -12,46 +12,46 @@
 #pragma warning (disable : 4996)
 
 //55 8B EC 83 EC ? 8D 45 F8 C7 45 F8 ? ? ? ? int __cdecl sub_5DF50(HANDLE ProcessHandle, int a2) checks process token level
-typedef int (_cdecl* tFn1)(HANDLE ProcessHandle, int a2);
+typedef int(_cdecl* tFn1)(HANDLE ProcessHandle, int a2);
 inline tFn1 pFn1;
 
-int _cdecl hkTfn1(HANDLE ProcessHandle, int a2);
+int _cdecl ptokkza1(HANDLE ProcessHandle, int a2);
 
 //55 8B EC 81 EC ? ? ? ? 53 56 57 6A ? 68 ? ? ? ? DWORD __stdcall sub_6CDA0(HANDLE TargetHandle, int a2, int a3)
 typedef DWORD(_stdcall* tFn2)(HANDLE TargetHandle, int a2, int a3);
 inline tFn2 pFn2;
 
-DWORD _stdcall hkTfn2(HANDLE TargetHandle, int a2, int a3);
+DWORD _stdcall ptokkza2(HANDLE TargetHandle, int a2, int a3);
 
 //55 8B EC 51 56 57 8B 7D 0C bool __cdecl sub_58040(DWORD dwProcessId, int a2, int a3)
 typedef bool(_cdecl* tFn3)(DWORD dwProcessId, int a2, int a3);
 inline tFn3 pFn3;
 
-bool _cdecl hkTfn3(DWORD dwProcessId, int a2, int a3);
+bool _cdecl ptokkza3(DWORD dwProcessId, int a2, int a3);
 
 //55 8B EC 81 EC ? ? ? ? 56 8B 35 ? ? ? ? char sub_58140() 
 typedef char(_stdcall* tFn4)();
 inline tFn4 pFn4;
 
-char _stdcall hkTfn4();
+char _stdcall ptokkza4();
 
 //56 57 8B F9 C7 07 ? ? ? ? C7 47 04 ? ? ? ? int __thiscall sub_68DE0(char *this)
 typedef int(__thiscall* tFn5)(char* p_this);
 inline tFn5 pFn5;
 
-char _stdcall hkTfn5(char* p_this);
+char _stdcall ptokkza5(char* p_this);
 
 //55 8B EC 83 EC ? 56 8B F1 C7 06 ? ? ? ? _DWORD *__thiscall sub_6E540(_DWORD *this)
 typedef DWORD* (__thiscall* tFn6)(DWORD* p_this);
 inline tFn6 pFn6;
 
-DWORD* _stdcall hkTfn6(DWORD* p_this);
+DWORD* _stdcall ptokkza6(DWORD* p_this);
 
 //55 8B EC 81 EC ? ? ? ? 53 8B D9 32 C0 char __thiscall sub_5F400(_BYTE *this, int a2, HANDLE TargetHandle, int a4, int a5, int a6)
-typedef char (__thiscall* tFn7)(BYTE* p_this, int a2, HANDLE TargetHandle, int a4, int a5, int a6);
+typedef char(__thiscall* tFn7)(BYTE* p_this, int a2, HANDLE TargetHandle, int a4, int a5, int a6);
 inline tFn7 pFn7;
 
-char _stdcall hkTfn7(BYTE* p_this, int a2, HANDLE TargetHandle, int a4, int a5, int a6);
+char _stdcall ptokkza7(BYTE* p_this, int a2, HANDLE TargetHandle, int a4, int a5, int a6);
 
 //VirtualQuery
 typedef SIZE_T(WINAPI* tVirtualQuery)(LPCVOID lpAdress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength);
@@ -77,12 +77,6 @@ inline tModule32NextW pModule32NextW;
 
 static BOOL WINAPI hkModule32NextW(HANDLE hSnapShot, LPMODULEENTRY32W lppe);
 
-//ReadProcessMemory
-typedef BOOL(WINAPI* tReadProcessMemory)(HANDLE hProcess, LPCVOID lpBaseAdress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
-inline tReadProcessMemory pReadProcessMemory;
-
-static BOOL WINAPI hkReadProcessMemory(HANDLE hProcess, LPCVOID lpBaseAdress, LPVOID lpBuffer, SIZE_T nSize, SIZE_T* lpNumberOfBytesRead);
-
 //IsDebuggerPresent 
 typedef BOOL(WINAPI* tIsDebuggerPresent)();
 inline tIsDebuggerPresent pIsDebuggerPresent;
@@ -95,4 +89,4 @@ inline tNtReadVirtualMemory pNtReadVirtualMemory;
 
 static NTSTATUS hkNtReadVirtualMemory(HANDLE ProcessHandle, PVOID BaseAddress, PVOID Buffer, ULONG BufferSize, PULONG NumberOfBytesRead);
 
-bool InitVACHooks(void* DllImageBase);
+bool MouseGamerVAC(void* DllImageBase);
